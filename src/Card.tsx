@@ -4,12 +4,11 @@ import { Dimensions, View, StyleSheet, Text } from "react-native";
 import { Product } from "./Model";
 import Button from "./components/Button";
 
-const { width } = Dimensions.get("window");
-export const CARD_HEIGHT = (width * 1564) / 974;
+const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
     container: {
         width,
-        height: CARD_HEIGHT,
+        height,
     },
     title: {
         // fontFamily: "GothamRounded-Bold",
@@ -33,7 +32,6 @@ const Card = ({ product: { color1, title } }: CardProps) => {
                     borderRadius: 16,
                     margin: 32,
                     flex: 1,
-                    backgroundColor: color1,
                     padding: 16,
                     justifyContent: "space-between",
                 }}
